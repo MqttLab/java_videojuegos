@@ -68,7 +68,7 @@ public class Main {
         if(videojuegos.isEmpty()){
             System.out.println("No hay videoujegos cargos. Favor cargue algunos!");
         } else {
-
+            System.out.println("Test");
         }
     }
 
