@@ -10,7 +10,7 @@ public class Main {
         while(cent){
             int op = menu();
             switch (op){
-                case 1:
+                case 1: crearArraylist(videoJuegos);
                     break;
                 case 2:
                     break;
@@ -38,9 +38,13 @@ public class Main {
         return sel;
     }
 
-    static public Videojuego crearArraylist(){
+    static public void crearArraylist(List<Videojuego> videojuegos){
         Scanner elegir = new Scanner(System.in);
-        elegir
+        System.out.print("Ingrese la cantidad de videojuegos a cargar: ");
+        int n = elegir.nextInt();
+        for(int i=0; i<n; i++){
+            System.out.println(i);
+        }
     }
 
     static public Videojuego crearVideojuego(){
