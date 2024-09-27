@@ -12,7 +12,7 @@ public class Main {
             switch (op){
                 case 1: crearArraylist(videoJuegos);
                     break;
-                case 2:
+                case 2: mostrarVideojuegos(videoJuegos);
                     break;
                 case 3:
                     break;
@@ -21,7 +21,6 @@ public class Main {
                 default:
                     cent = false;
             }
-            cent = false;
         }
     }
 
@@ -34,6 +33,7 @@ public class Main {
                 "3. Modificar juego (busqueda por codigo)\n" +
                 "4. Mostrar videojuegos de consola Nintendo 64\n" +
                 "5. Salir");
+        System.out.print("?: ");
         sel = elegir.nextInt();
         return sel;
     }
@@ -43,7 +43,7 @@ public class Main {
         System.out.print("Ingrese la cantidad de videojuegos a cargar: ");
         int n = elegir.nextInt();
         for(int i=0; i<n; i++){
-            System.out.println(i);
+            videojuegos.add(crearVideojuego());
         }
     }
 
@@ -51,19 +51,25 @@ public class Main {
         Scanner cons = new Scanner(System.in);
         System.out.print("Ingrese el codigo: ");
         int codigo = cons.nextInt();
+        cons.nextLine();
         System.out.print("Ingrese el Titulo: ");
-        String titulo = cons.next();
+        String titulo = cons.nextLine();
         System.out.print("Ingrese la consola: ");
-        String consola = cons.next();
+        String consola = cons.nextLine();
         System.out.print("Ingrese la cantidad de jugadores: ");
         int cantJugadores = cons.nextInt();
-        System.out.print("Ingrese la categoria [numerico]: ");
+        System.out.print("Ingrese la categoria: ");
         String categoria = cons.next();
+        cons.nextLine();
         return new Videojuego(codigo, titulo, consola, cantJugadores, categoria);
     }
 
-    static public void mostrarVideojuegos(){
+    static public void mostrarVideojuegos(List<Videojuego> videojuegos){
+        if(videojuegos.isEmpty()){
+            System.out.println("No hay videoujegos cargos. Favor cargue algunos!");
+        } else {
 
+        }
     }
 
 }
